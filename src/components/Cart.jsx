@@ -62,7 +62,7 @@ const Cart = () => {
 
   return (
     <s.Container>
-        
+        <TitleContainer></TitleContainer>
       {cart.length === 0 ? (
         <p>You have no products in the cart.</p>
       ) : (
