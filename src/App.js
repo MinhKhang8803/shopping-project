@@ -1,18 +1,21 @@
+// App.js
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Routes and Route
+import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store/configureStore";
 import Header from "./components/Header";
-import ProductList from "./components/ProductList"; // Make sure to import ProductList
+import Cart from "./components/Cart"
+// import ProductList from "./components/ProductList";
+// import Checkout from "./components/Checkout";
 
 function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Header />
-        <Routes>
-          <Route path="/products" element={<ProductList />} />
-        </Routes>
+        <div>
+          <Header />
+          <Cart />
+        </div>
       </Router>
     </Provider>
   );
