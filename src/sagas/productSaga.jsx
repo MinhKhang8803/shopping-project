@@ -9,9 +9,11 @@ function* fetchProducts() {
         const response = yield call(api.fetchProducts);
         yield put(productActions.fetchProductsSuccess(response.data));
     } catch (error) {
-        // Handle error
+        console.error('Fetch products error:', error);
+        // Dispatch a failure action here if you have one
     }
 }
+
 
 function* watchFetchProducts() {
     yield takeLatest(actionTypes.FETCH_PRODUCTS_REQUEST, fetchProducts);
